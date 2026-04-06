@@ -1,0 +1,5107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM - Strategic Advisory & Management | Political Strategy & Consulting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+<style>
+/* style.css - Complete with Animations & Transitions */
+
+:root {
+    --primary-blue: #0a1f44;
+    --accent-red: #c1272d;
+    --accent-gold: #d4af37;
+    --light-gray: #f5f7fa;
+    --medium-gray: #e1e5eb;
+    --dark-gray: #333;
+    --text-color: #222;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Animation */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-blue);
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+#header > div > nav > a > img{
+width: 50px;
+    height: 42px;
+margin-right:15px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-family: 'Montserrat', sans-serif;margin-right:15px;
+}
+
+.logo-tag {
+    font-size: 12px;
+    color: var(--accent-red);
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--accent-red);
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-red);
+    transition: var(--transition);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    color: var(--primary-blue);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    transition: var(--transition);
+    padding: 80px 30px 30px;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-links {
+    list-style: none;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 20px;
+    animation: slideInRight 0.3s ease backwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-size: 18px;
+    font-weight: 500;
+    transition: var(--transition);
+    display: block;
+    padding: 10px 0;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--accent-red);
+    transform: translateX(5px);
+}
+
+.close-menu {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--primary-blue);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-menu:hover {
+    transform: rotate(90deg);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero Section with Slider */
+.hero {
+    position: relative;
+    color: var(--white);
+    padding: 180px 0 100px;
+    text-align: center;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slider .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-slider .swiper-slide:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.95));
+}
+
+.swiper-pagination-bullet {
+    background: lightgray;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    margin: 0 8px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--accent-red);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 20px;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background: var(--accent-red);
+    transform: scale(1.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Animations */
+.animate-slide-down {
+    animation: slideDown 0.8s ease;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease 0.3s both;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease 0.6s both;
+}
+
+.animate-scale {
+    animation: scaleIn 0.6s ease 0.9s both;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 24px;
+    color: var(--accent-gold);
+    font-weight: 500;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.hero-description {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--accent-red);
+    color: var(--white);
+    padding: 15px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(193, 39, 45, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #a02025;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(193, 39, 45, 0.4);
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: var(--primary-blue);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-red);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: expandLine 1s ease 0.5s both;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+.section-subtitle {
+    color: var(--dark-gray);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.mission, .vision {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.mission:hover, .vision:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mission h3, .vision h3 {
+    color: var(--accent-red);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Founder Section */
+.founder-section {
+    background-color: var(--light-gray);
+}
+
+#founder .founder-container {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 1200px;
+            width: 90%;
+            animation: fadeIn 0.8s ease; margin:0 auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .founder-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sam-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(193, 39, 45, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+#founder .section-title {
+            margin-bottom: 10px;
+        }
+
+#founder .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+#founder .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-red);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: expandLine 1s ease 0.5s both;
+        }
+
+        @keyframes expandLine {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+
+#founder .section-subtitle {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Founder Profile */
+        .founder-profile {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 50px;
+            padding: 50px;
+            background: var(--white);
+        }
+
+        /* Left Column - Founder Image & Basic Info */
+        .founder-left {
+            position: relative;
+        }
+
+        .founder-image-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .founder-image {
+            width: 200px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+            //border-radius: var(--border-radius); border-radius:50%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(10, 31, 68, 0.2);
+            position: relative; margin:auto;
+        }
+
+        .founder-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            //background: ;
+        }
+
+        .founder-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 120px;
+            color: var(--white);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+
+        .founder-badge {
+           // position: absolute;
+            //bottom: -20px;
+            //left: 50%;
+            //background: var(--accent-red); transform:translateX(-50%);
+            //color: var(--white);
+            //padding: 10px 25px;
+            //border-radius: 25px;
+            //font-weight: 700;
+            //font-size: 14px;
+            //text-transform: uppercase;
+           // letter-spacing: 1px;
+            //box-shadow: 0 5px 15px rgba(193, 39, 45, 0.3);
+            animation: slideIn 0.6s ease 0.3s both;
+
+
+position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    bottom: -32px;
+
+    //background:  rgba(193, 39, 45,0.2);
+    color: black;
+    padding: 7px 25px;
+    border-radius: 25px;
+    font-weight: 700;letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .founder-name {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .founder-name h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .founder-name p {
+            font-size: 16px;
+            color: var(--accent-red);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .founder-tagline {
+            font-size: 14px;
+            color: var(--dark-gray);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .founder-contact {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            color: var(--accent-red);
+        }
+
+        /* Right Column - Founder Details */
+        .founder-right {
+            padding-top: 20px;
+        }
+
+        /* Tabs Navigation */
+        .founder-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--light-gray);
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-blue);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            background: var(--medium-gray);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(10, 31, 68, 0.2);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Education Tab */
+        .education-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .education-card {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-left-color: var(--accent-red);
+        }
+
+        .education-card:nth-child(1):hover {
+            border-left-color: #4CAF50;
+        }
+
+        .education-card:nth-child(2):hover {
+            border-left-color: #2196F3;
+        }
+
+        .education-card:nth-child(3):hover {
+            border-left-color: #FF9800;
+        }
+
+        .degree-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .education-card:hover .degree-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .education-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .education-card p {
+            color: var(--dark-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .university {
+            color: var(--accent-red) !important;
+            font-weight: 600;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Experience Tab */
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .experience-timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-red);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--accent-red);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+#founder .experience-header h4 {
+            color: var(--primary-blue);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-header h4 i {
+            color: var(--accent-red);
+        }
+
+        .experience-period {
+            background: var(--accent-red);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .experience-details ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .experience-details li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--dark-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .experience-details li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        /* Interviews Tab */
+        .interviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .interview-card {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid transparent;
+        }
+
+        .interview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .interview-card:nth-child(1):hover {
+            border-top-color: #4CAF50;
+        }
+
+        .interview-card:nth-child(2):hover {
+            border-top-color: #2196F3;
+        }
+
+        .interview-card:nth-child(3):hover {
+            border-top-color: #FF9800;
+        }
+
+        .interview-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .interview-card:hover .interview-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .interview-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .interview-card p {
+            color: var(--dark-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Philosophy Tab */
+        .philosophy-content {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .philosophy-quote {
+            font-size: 18px;
+            color: var(--primary-blue);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .philosophy-quote:before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 60px;
+            color: var(--accent-red);
+            opacity: 0.2;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .philosophy-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .philosophy-point {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .philosophy-point:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .philosophy-point i {
+            font-size: 32px;
+            color: var(--accent-red);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .philosophy-point h5 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .philosophy-point p {
+            color: var(--dark-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+#founder .founder-profile {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+.founder-image {
+                height: 300px;
+            }
+            
+            .education-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .interviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+#founder .founder-header {
+                padding: 30px 20px;
+            }
+            
+#founder .section-title h2 {
+                font-size: 25px;
+            }
+            
+#founder .founder-profile {
+                padding: 30px;
+            }
+            
+#founder .founder-tabs {
+                flex-direction: column;
+            }
+            
+#founder .tab-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+ 
+        }
+
+        @media (max-width: 576px) {
+#founder .founder-header {
+                padding: 25px 15px;
+            }
+#founder .founder-header h1 {
+                font-size: 21px;
+            }
+            
+#founder .section-title h2 {
+                font-size: 21px;
+            }
+            #founder .section-subtitle {
+                font-size: 14px;
+            }
+            
+#founder .founder-profile {
+                padding: 20px;
+            }
+            #founder .founder-name h3 {
+                font-size: 22px;
+            }
+            #founder .founder-name p{
+font-size: 14px;
+} 
+#founder > div > div.founder-profile > div.founder-left > div.founder-name > p:nth-child(2){
+font-size: 13px;
+}
+            .education-card, .experience-item, .interview-card {
+                padding: 20px;
+            }
+            
+            .philosophy-content {
+                padding: 20px;
+            }
+        }
+
+/* Elections Section */
+.elections-section {
+    background-color: var(--light-gray);
+}
+
+/* Election Slider */
+.election-timeline-slider {
+    margin-bottom: 50px;
+}
+
+.election-slide-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    text-align: center;
+}
+
+.election-slide-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.state-flag {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: var(--white);
+}
+
+.election-slide-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.election-type {
+    color: var(--accent-red);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.election-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+}
+
+.election-details {
+    background: var(--light-gray);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.election-details h4 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.planning-timeline {
+    background: rgba(193, 39, 45, 0.1);
+    padding: 15px;
+    border-radius: var(--border-radius);
+}
+
+.timeline-bar {
+    height: 8px;
+    background: var(--medium-gray);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.timeline-progress {
+    height: 100%;
+    background: var(--accent-red);
+    border-radius: 4px;
+    animation: progressFill 2s ease-out;
+}
+
+@keyframes progressFill {
+    from { width: 0; }
+}
+
+/* Election Table */
+.election-planning-table {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+.election-planning-table h3 {
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+tr:hover {
+    background: var(--light-gray);
+    transition: var(--transition);
+}
+
+.status-high, .status-medium {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-high {
+    background: rgba(193, 39, 45, 0.1);
+    color: var(--accent-red);
+}
+
+.status-medium {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+}
+
+.election-planning-cta {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+    color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    animation: pulseCTA 2s infinite;
+}
+
+@keyframes pulseCTA {
+    0% { box-shadow: 0 0 0 0 rgba(10, 31, 68, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(10, 31, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(10, 31, 68, 0); }
+}
+
+.planning-info h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.planning-info p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+}
+
+.planning-button {
+    background-color: var(--accent-red);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.planning-button:hover {
+    background-color: #a02025;
+    transform: translateY(-3px) scale(1.05);
+}
+
+
+/* Track Record Section */
+.election-experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.election-experience {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.election-experiences .experience-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%);
+    color: var(--white);
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.election-experiences .experience-header h3 {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.election-experiences .experience-badge {
+    background: var(--accent-red);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.election-experiences .experience-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.election-experiences .experience-highlights h4,.election-experiences .experience-outcome h4 {
+    color: var(--accent-red);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.election-experiences .experience-highlights ul {
+    list-style: none;
+}
+
+.election-experiences .experience-highlights li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.election-experiences .experience-highlights li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+.election-experiences .experience-outcome {
+    background: var(--light-gray);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-red);
+}
+
+.expertise-summary {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.expertise-summary h3 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 28px;
+}
+
+.expertise-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.expertise-point {
+    text-align: center;
+}
+
+.expertise-point i {
+    font-size: 48px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.expertise-point h4 {
+    color: var(--accent-red);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.expertise-point p {
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.expertise-conclusion {
+    text-align: center;
+    font-size: 18px;
+    color: var(--primary-blue);
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid var(--light-gray);
+}
+
+
+/* Services Section */
+.services-section {
+    background-color: var(--light-gray);margin-bottom:10px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-blue);
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-top-color: var(--accent-red);
+}
+
+.service-icon {
+    font-size: 48px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    color: var(--accent-red);
+    transform: rotate(10deg) scale(1.1);
+}
+
+.service-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.service-card ul {
+    list-style: none;
+}
+
+.service-card li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.service-card li:hover {
+    transform: translateX(5px);
+}
+
+.service-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+
+/* Team Section */
+.team-section {
+    background-color: var(--light-gray);
+}
+
+.experience-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--accent-red);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-composition {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 50px;
+}
+
+.team-composition h3 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 28px;
+}
+
+.composition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.composition-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.composition-item h4 {
+    color: var(--accent-red);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.composition-item p {
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.team-process {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.team-process h3 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 28px;
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.process-step {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: var(--accent-red);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.step-content p {
+    color: var(--dark-gray);
+}
+
+
+/* Why Choose Section */
+.why-choose-section {
+    background-color: var(--light-gray);
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.advantage-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: var(--shadow-hover);
+}
+
+.advantage-icon {
+    font-size: 48px;
+    color: var(--accent-red);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.advantage-card:hover .advantage-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.advantage-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.advantage-card p {
+    color: var(--dark-gray);
+    font-size: 15px;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-method {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: var(--transition);
+}
+
+.contact-method:hover {
+    transform: translateX(10px);
+}
+
+.contact-method i {
+    font-size: 32px;
+    color: var(--accent-red);
+    margin-top: 5px;
+}
+
+.contact-method h4 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.contact-method p {
+    color: var(--dark-gray);
+    margin-bottom: 5px;
+}
+
+.contact-note {
+    font-size: 14px;
+    color: #666;
+}
+
+.confidentiality-notice {
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    border-left: 4px solid var(--accent-red);
+    transition: var(--transition);
+}
+
+.confidentiality-notice:hover {
+    transform: translateX(10px);
+}
+
+.confidentiality-notice i {
+    color: var(--accent-red);
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+.confidentiality-notice p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--dark-gray);
+}
+
+.contact-form {
+    background-color: var(--light-gray);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-form h3 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(10, 31, 68, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: var(--accent-red);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-button:hover {
+    background-color: #a02025;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(193, 39, 45, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 60px 0 30px;
+    animation: fadeIn 1s ease;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+    color: var(--white);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+}
+
+.footer-links h4, .footer-services h4, .footer-contact h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-links ul, .footer-services ul {
+    list-style: none;
+}
+
+.footer-links li, .footer-services li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+    transform: translateX(5px);
+}
+
+.footer-services li {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-services li:hover {
+    color: var(--accent-gold);
+    transform: translateX(5px);
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.footer-contact p:hover {
+    color: var(--accent-gold);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.disclaimer {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .founder-profile {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .founder-image {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .tagline {
+        font-size: 22px;
+    }
+
+.election-experiences .experience-content {
+        grid-template-columns: 1fr;
+    }
+    
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .election-planning-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero {
+        padding: 150px 0 80px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .tagline {
+        font-size: 20px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .tagline {
+        font-size: 18px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .cta-button, .planning-button, .submit-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .service-card, .advantage-card {
+        padding: 20px;
+    }
+    
+    .founder-image {
+        width: 100px;
+        height: 100px;
+        font-size: 100px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+.election-experiences .experience-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .expertise-points {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .tagline {
+        font-size: 22px;
+    }
+    
+    .founder-profile {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .founder-image {
+        margin: 0 auto;
+    }
+    
+.election-experiences .experience-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero {
+        padding: 150px 0 80px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .tagline {
+        font-size: 20px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+    
+    .election-planning-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+    }
+
+.swiper-button-next,.swiper-button-prev{
+opacity:0;
+}
+
+#next2a,#prev2a{
+opacity:1;
+}
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .tagline {
+        font-size: 18px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .cta-button, .planning-button, .submit-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .election-card, .service-card, .advantage-card {
+        padding: 20px;
+    }
+    
+    .founder-image {
+        width: 160px;
+        height: 150px;
+        font-size: 30px;
+    }
+    
+.election-experiences .experience-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .expertise-points {
+        grid-template-columns: 1fr;
+    }
+
+   .contact-form {
+    padding:20px;
+    }
+.swiper-button-next,.swiper-button-prev{
+opacity:0;
+}
+#next2a,#prev2a{
+opacity:1;
+}
+}
+
+
+
+
+
+
+
+
+
+
+/* Custom Swiper Styles */
+.swiper {
+    padding-bottom: 40px !important;
+}
+
+.swiper-pagination {
+    position: absolute !important;
+    bottom: 0 !important;
+}
+
+/* Loading Animation */
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease 2s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--accent-red);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-links a.active {
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+.nav-links a.active:after {
+    width: 100%;
+}
+
+
+.mobile-nav.active {
+    right: 0;
+}
+
+
+
+#next2a,#prev2a{
+background: rgba(112, 10, 12, 0.3);
+}
+#next2a:hover,#prev2a:hover{
+    background: var(--accent-red);
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-red);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <img class="logo-sam" src='https://i.postimg.cc/ZRPSnXsn/Whats-App-Image-2025-12-15-at-9-33-25-AM.png'>
+                    
+                    <div class="logo-text">
+                        <span class="logo-main">Strategic Advisory & Management</span>
+                        <span class="logo-tag">Political Strategy & Consulting</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#elections">Elections</a></li>
+                    <li><a href="#founder">Founder</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-menu" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#elections">Elections</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero" id="home">
+        <!-- Slider Background -->
+        <div class="hero-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b2fb2f5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');"></div>
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1769&q=80');"></div>
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next" ></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-slide-down">Strategic Advisory & Management</h1>
+                <p class="tagline animate-slide-up delay-1">Strategic Solutions for Modern <br> Data-Driven Politics</p>
+                <p class="hero-description animate-fade-in delay-2">We combine political experience, data science, and field intelligence to help candidates and parties win with precision and impact.</p>
+                <a href="#contact" class="cta-button animate-scale delay-3">
+                    <i class="fas fa-calendar-check"></i> Schedule Confidential Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">About SAM</h2>
+                <p class="section-subtitle animate-on-scroll delay-1">Specialized Political Consultancy Services</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p><strong>Strategic Advisory & Management (SAM)</strong> is a specialized political consultancy services firm dedicated to providing evidence-based strategies, communication tools, and on-ground support for modern election campaigns.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission animate-on-scroll delay-1">
+                            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                            <p>To empower political leaders with smart, data-backed decision-making, ensuring ethical, efficient, and effective election strategies.</p>
+                        </div>
+                        <div class="vision animate-on-scroll delay-2">
+                            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                            <p>To become India's most trusted political consultancy for strategy, communication, and election management, driven by innovation and integrity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Our Services</h2>
+                <p class="section-subtitle animate-on-scroll delay-1">Comprehensive political consultancy solutions</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h3>Political Strategy & Advisory</h3>
+                    <ul>
+                        <li>Campaign blueprinting</li>
+                        <li>War-room management</li>
+                        <li>Message crafting</li>
+                        <li>Policy-based advisory</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Digital Campaign Management</h3>
+                    <ul>
+                        <li>Social media strategy</li>
+                        <li>Content creation & posting</li>
+                        <li>Influencer collaboration</li>
+                        <li>Social media war-room</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Data & Analytics</h3>
+                    <ul>
+                        <li>Voter profiling</li>
+                        <li>Booth-wise analysis</li>
+                        <li>Swing voter identification</li>
+                        <li>Sentiment analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-icon">
+                        <i class="fas fa-people-carry"></i>
+                    </div>
+                    <h3>Ground Operations</h3>
+                    <ul>
+                        <li>Volunteer mobilisation</li>
+                        <li>Door-to-door outreach</li>
+                        <li>Event & rally management</li>
+                        <li>Polling-day operations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Upcoming Elections Section -->
+    <section class="section elections-section" id="elections">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Upcoming Elections in India</h2>
+                <p class="section-subtitle animate-on-scroll delay-1">Strategic planning for electoral success (2025–2027)</p>
+            </div>
+            
+            <!-- Election Timeline Slider -->
+            <div class="election-timeline-slider animate-on-scroll">
+                <div class="swiper electionSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- West Bengal -->
+                        <div class="swiper-slide">
+                            <div class="election-slide-card">
+                                <div class="state-flag">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <h3>West Bengal</h3>
+                                <p class="election-type">Legislative Assembly Election</p>
+                                <div class="election-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>April-May 2026</span>
+                                </div>
+                                <div class="election-details">
+                                    <h4>Strategic Importance:</h4>
+                                    <p>294 seats, Highly competitive, Regional dynamics crucial</p>
+                                </div>
+                                <div class="planning-timeline">
+                                    <div class="timeline-bar">
+                                        <div class="timeline-progress" style="width: 40%;"></div>
+                                    </div>
+                                    <p><i class="fas fa-clock"></i> 18+ months planning required</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Assam -->
+                        <div class="swiper-slide">
+                            <div class="election-slide-card">
+                                <div class="state-flag">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <h3>Assam</h3>
+                                <p class="election-type">Legislative Assembly Election</p>
+                                <div class="election-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>April-May 2026</span>
+                                </div>
+                                <div class="election-details">
+                                    <h4>Strategic Importance:</h4>
+                                    <p>126 seats, Key northeastern state, Demographic complexities</p>
+                                </div>
+                                <div class="planning-timeline">
+                                    <div class="timeline-bar">
+                                        <div class="timeline-progress" style="width: 40%;"></div>
+                                    </div>
+                                    <p><i class="fas fa-clock"></i> 18+ months planning required</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kerala -->
+                        <div class="swiper-slide">
+                            <div class="election-slide-card">
+                                <div class="state-flag">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <h3>Kerala</h3>
+                                <p class="election-type">Legislative Assembly Election</p>
+                                <div class="election-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>April-May 2026</span>
+                                </div>
+                                <div class="election-details">
+                                    <h4>Strategic Importance:</h4>
+                                    <p>140 seats, Bipolar competition, High voter literacy</p>
+                                </div>
+                                <div class="planning-timeline">
+                                    <div class="timeline-bar">
+                                        <div class="timeline-progress" style="width: 40%;"></div>
+                                    </div>
+                                    <p><i class="fas fa-clock"></i> 18+ months planning required</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tamil Nadu -->
+                        <div class="swiper-slide">
+                            <div class="election-slide-card">
+                                <div class="state-flag">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <h3>Tamil Nadu</h3>
+                                <p class="election-type">Legislative Assembly Election</p>
+                                <div class="election-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>April-May 2026</span>
+                                </div>
+                                <div class="election-details">
+                                    <h4>Strategic Importance:</h4>
+                                    <p>234 seats, Regional parties dominant, Linguistic politics</p>
+                                </div>
+                                <div class="planning-timeline">
+                                    <div class="timeline-bar">
+                                        <div class="timeline-progress" style="width: 40%;"></div>
+                                    </div>
+                                    <p><i class="fas fa-clock"></i> 18+ months planning required</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next" id="next2a"></div>
+                    <div class="swiper-button-prev" id="prev2a"></div>
+                </div>
+            </div>
+            
+            <!-- Election Planning Table -->
+            <div class="election-planning-table animate-on-scroll delay-2">
+                <h3><i class="fas fa-calendar-check"></i> Important Upcoming Elections (2025–2027)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Election Type</th>
+                            <th>Expected Date</th>
+                            <th>Planning Timeline</th>
+                            <th>Action Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>West Bengal</strong></td>
+                            <td>Legislative Assembly</td>
+                            <td>2026 (Apr–May)</td>
+                            <td>18-24 Months</td>
+                            <td><span class="status-high">Start Now</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assam</strong></td>
+                            <td>Legislative Assembly</td>
+                            <td>2026 (Apr–May)</td>
+                            <td>18-24 Months</td>
+                            <td><span class="status-high">Start Now</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kerala</strong></td>
+                            <td>Legislative Assembly</td>
+                            <td>2026 (Apr–May)</td>
+                            <td>18-24 Months</td>
+                            <td><span class="status-high">Start Now</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tamil Nadu</strong></td>
+                            <td>Legislative Assembly</td>
+                            <td>2026 (Apr–May)</td>
+                            <td>18-24 Months</td>
+                            <td><span class="status-high">Start Now</span></td>
+                        </tr>
+                        <tr>
+                            <td>Other States</td>
+                            <td>Various Elections</td>
+                            <td>2025-2027</td>
+                            <td>12-18 Months</td>
+                            <td><span class="status-medium">Plan Ahead</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="election-planning-cta animate-on-scroll delay-3">
+                <div class="planning-info">
+                    <h3><i class="fas fa-chess"></i> Election Planning Window</h3>
+                    <p>The ideal planning period for any election is 12-24 months before the announcement. Contact us now to ensure your campaign starts with maximum advantage.</p>
+                </div>
+                <a href="#contact" class="planning-button">
+                    <i class="fas fa-calendar-check"></i> Start Election Planning
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proven Track Record Section -->
+    <section class="section track-record-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proven Track Record</h2>
+                <p class="section-subtitle">Hands-on experience across multiple electoral landscapes</p>
+            </div>
+            
+            <div class="election-experiences">
+                <!-- Delhi MCD Elections -->
+                <div class="election-experience">
+                    <div class="experience-header">
+                        <h3><i class="fas fa-archway"></i> Delhi MCD Elections</h3>
+                        <span class="experience-badge">Municipal Strategy</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlights">
+                            <h4><i class="fas fa-trophy"></i> Key Contributions:</h4>
+                            <ul>
+                                <li><strong>Booth Strategy:</strong> Developed booth-level management plans for 250+ polling stations</li>
+                                <li><strong>Voter Segmentation:</strong> Created demographic-based voter categorization for targeted outreach</li>
+                                <li><strong>Social Media Messaging:</strong> Designed localized content strategy for urban voter engagement</li>
+                                <li><strong>Local Awareness Campaigns:</strong> Executed hyper-local issue-based awareness drives</li>
+                            </ul>
+                        </div>
+                        <div class="experience-outcome">
+                            <h4><i class="fas fa-chart-line"></i> Outcome:</h4>
+                            <p>Successfully increased voter turnout in targeted wards by 18% and improved candidate visibility by 35% in digital spaces.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jharkhand Assembly Elections -->
+                <div class="election-experience">
+                    <div class="experience-header">
+                        <h3><i class="fas fa-landmark"></i> Jharkhand Assembly Elections</h3>
+                        <span class="experience-badge">State-Level Campaign</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlights">
+                            <h4><i class="fas fa-trophy"></i> Key Contributions:</h4>
+                            <ul>
+                                <li><strong>Core Campaign Team:</strong> Served on the core strategy team for a senior political leader</li>
+                                <li><strong>Digital Media Management:</strong> Orchestrated complete digital presence across platforms</li>
+                                <li><strong>Political Communication:</strong> Crafted state-specific messaging and narrative building</li>
+                                <li><strong>District-Level Outreach:</strong> Coordinated ground operations across multiple districts</li>
+                            </ul>
+                        </div>
+                        <div class="experience-outcome">
+                            <h4><i class="fas fa-chart-line"></i> Outcome:</h4>
+                            <p>Managed successful campaign resulting in improved vote share and strategic positioning in key constituencies.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bihar Assembly Elections -->
+                <div class="election-experience">
+                    <div class="experience-header">
+                        <h3><i class="fas fa-landmark"></i> Bihar Assembly Elections</h3>
+                        <span class="experience-badge">Complex State Election</span>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-highlights">
+                            <h4><i class="fas fa-trophy"></i> Key Contributions:</h4>
+                            <ul>
+                                <li><strong>Field Team Coordination:</strong> Managed and coordinated 150+ field operatives</li>
+                                <li><strong>Volunteer Networks:</strong> Built and managed volunteer networks across constituencies</li>
+                                <li><strong>Constituency-Specific Messaging:</strong> Developed tailored communication for different regions</li>
+                                <li><strong>On-Ground Mobilization:</strong> Supported large-scale voter mobilization efforts</li>
+                            </ul>
+                        </div>
+                        <div class="experience-outcome">
+                            <h4><i class="fas fa-chart-line"></i> Outcome:</h4>
+                            <p>Successfully executed complex multi-constituency strategy with efficient resource allocation and team management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="expertise-summary">
+                <h3><i class="fas fa-graduation-cap"></i> Our Core Understanding</h3>
+                <div class="expertise-points">
+                    <div class="expertise-point">
+                        <i class="fas fa-users"></i>
+                        <h4>Voter Behaviour</h4>
+                        <p>Deep understanding of demographic and psychographic voter patterns</p>
+                    </div>
+                    <div class="expertise-point">
+                        <i class="fas fa-bullhorn"></i>
+                        <h4>Political Communication</h4>
+                        <p>Strategic messaging and narrative control across traditional and digital media</p>
+                    </div>
+                    <div class="expertise-point">
+                        <i class="fas fa-vote-yea"></i>
+                        <h4>Booth Dynamics</h4>
+                        <p>Micro-level election day management and polling station strategies</p>
+                    </div>
+                    <div class="expertise-point">
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Digital Strategy</h4>
+                        <p>Integrated digital campaigns combining social media, data analytics, and outreach</p>
+                    </div>
+                </div>
+                <p class="expertise-conclusion"><strong>The essential pillars of a winning campaign that we understand and execute.</strong></p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Founder Section -->
+    <section class="section founder-section" id="founder">
+    <div class="founder-container">
+        <!-- Header -->
+        <div class="founder-header">
+            <div class="header-content">
+                <div class="sam-logo">
+
+                    <div class="logo-text">
+                        <h1>Strategic Advisory & Management</h1>
+                        <p>Political Strategy & Consulting</p>
+                    </div>
+                </div>
+                
+                <div class="section-title">
+                    <h2>Founder & Leadership</h2>
+                    <p class="section-subtitle">Meet the visionary behind our political strategy success</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Founder Profile -->
+        <div class="founder-profile">
+            <!-- Left Column - Image & Basic Info -->
+            <div class="founder-left">
+                <div class="founder-image-container">
+                    <div class="founder-image">
+
+ <img src='https://i.ibb.co/zHWRZ3h4/ahmad.jpg' style="height:100%;width:100%;color:white;" alt="Ahmad Pictures">
+                       
+                    </div>
+                    <div class="founder-badge">Founder</div>
+                </div>
+
+                <div class="founder-name">
+                    <h3>Ahmad Samir</h3>
+                    <p >Political Strategist</p>
+                    <p class="founder-tagline">From Journalism to Political Strategy</p>
+                </div>
+
+                <div class="founder-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Double Masters Degree Holder</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Former India News Journalist</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-microphone-alt"></i>
+                        <span>Interviewed Ministers, MPs, IAS Officers</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Detailed Information -->
+            <div class="founder-right">
+                <!-- Tabs Navigation -->
+                <div class="founder-tabs">
+                    <button class="tab-btn active" data-tab="education">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </button>
+                    <button class="tab-btn" data-tab="experience">
+                        <i class="fas fa-briefcase"></i> Experience
+                    </button>
+                    <button class="tab-btn" data-tab="interviews">
+                        <i class="fas fa-microphone-alt"></i> Interviews
+                    </button>
+                    <button class="tab-btn" data-tab="philosophy">
+                        <i class="fas fa-lightbulb"></i> Philosophy
+                    </button>
+                </div>
+<!-- Tab Content -->
+                <div class="tab-content active" id="education">
+                    <div class="education-cards">
+                        <div class="education-card">
+                            <div class="degree-icon">
+                                <i class="fas fa-scroll"></i>
+                            </div>
+                            <h4>MA in Media and Governance</h4>
+                            <p>Specialized in political communication, media ethics, and governance frameworks. Focused on the intersection of media narratives and political strategy.</p>
+                            <span class="university">Jamia Millia Islamia, Delhi</span>
+                        </div>
+
+                        <div class="education-card">
+                            <div class="degree-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>MA in Sociology</h4>
+                            <p>Studied social structures, political behavior, and voter psychology. Understanding societal dynamics for effective political campaigning.</p>
+                            <span class="university">IGNOU, Delhi</span>
+                        </div>
+
+                        <div class="education-card">
+                            <div class="degree-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h4>BA in Mass Media</h4>
+                            <p>Foundation in media studies, communication theories, and journalism ethics. Practical training in news reporting and media production.</p>
+                            <span class="university">Jamia Millia Islamia, Delhi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="experience">
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h4><i class="fas fa-newspaper"></i> India News</h4>
+                                <span class="experience-period">Journalist</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li>Political correspondent covering parliamentary proceedings</li>
+                                    <li>Reported on election campaigns and political developments</li>
+                                    <li>Produced investigative reports on governance issues</li>
+                                    <li>Covered breaking political news at national level</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h4><i class="fas fa-globe"></i> Wire News India (WNI)</h4>
+                                <span class="experience-period">Political Correspondent</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li>Specialized in political analysis and reporting</li>
+                                    <li>Covered election campaigns across multiple states</li>
+                                    <li>Authored in-depth political analysis pieces</li>
+                                    <li>Built network of political sources and contacts</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h4><i class="fas fa-user-edit"></i> Freelance Journalism</h4>
+                                <span class="experience-period">Political Analyst</span>
+                            </div>
+                            <div class="experience-details">
+                                <ul>
+                                    <li>Conducted exclusive interviews with political leaders</li>
+                                    <li>Authored analytical pieces for multiple publications</li>
+                                    <li>Provided political commentary for media outlets</li>
+                                    <li>Developed expertise in election forecasting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="interviews">
+                    <div class="interviews-grid">
+                        <div class="interview-card">
+                            <div class="interview-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>Cabinet Ministers</h4>
+                            <p>Conducted in-depth interviews with Government Ministers, gaining insights into policy formulation, governance challenges, and political strategy from the highest levels of government.</p>
+                        </div>
+
+                        <div class="interview-card">
+                            <div class="interview-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h4>Members of Parliament</h4>
+                            <p>Interviewed MPs across political parties, understanding legislative processes, constituency management, and political dynamics from lawmakers' perspectives.</p>
+                        </div>
+
+                        <div class="interview-card">
+                            <div class="interview-icon">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <h4>Senior IAS Officers</h4>
+                            <p>Engaged with bureaucrats to understand policy implementation, administrative challenges, and the intersection of politics and governance from executive perspective.</p>
+                        </div>
+                    </div>
+
+                    <div class="philosophy-content">
+                        <p class="philosophy-quote">"My experience interviewing decision-makers across the political spectrum gives me unique insight into how political narratives are crafted, how decisions are made, and how strategies are implemented at the highest levels."</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="philosophy">
+                    <div class="philosophy-content">
+                        <p class="philosophy-quote">"Journalism taught me how to ask the right questions. Political strategy is about providing the right answers. My journey from interviewing Ministers to advising political campaigns gives me a 360-degree view of Indian politics."</p>
+                        
+                        <div class="philosophy-points">
+                            <div class="philosophy-point">
+                                <i class="fas fa-eye"></i>
+                                <h5>Insider Perspective</h5>
+                                <p>First-hand understanding of political decision-making processes from interviewing key decision-makers.</p>
+                            </div>
+                            
+                            <div class="philosophy-point">
+                                <i class="fas fa-network-wired"></i>
+                                <h5>Network Access</h5>
+                                <p>Established relationships across political, bureaucratic, and media circles through years of journalism.</p>
+                            </div>
+                            
+                            <div class="philosophy-point">
+                                <i class="fas fa-chess"></i>
+                                <h5>Strategic Thinking</h5>
+                                <p>Ability to anticipate political moves and craft winning strategies based on deep political understanding.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Our Team Experience Section -->
+    <section class="section team-section" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team Experience</h2>
+                <p class="section-subtitle">Seasoned professionals with proven electoral expertise</p>
+            </div>
+            
+            <div class="team-experience">
+                <div class="experience-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Elections Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years Combined Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Candidates Advised</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">States Covered</div>
+                    </div>
+                </div>
+                
+                <div class="team-composition">
+                    <h3><i class="fas fa-users"></i> Team Composition</h3>
+                    <div class="composition-grid">
+                        <div class="composition-item">
+                            <h4><i class="fas fa-user-tie"></i> Political Strategists</h4>
+                            <p>Former party officials, campaign managers, and policy experts with deep understanding of Indian politics</p>
+                        </div>
+                        <div class="composition-item">
+                            <h4><i class="fas fa-chart-line"></i> Data Analysts</h4>
+                            <p>Specialists in voter data analysis, demographic mapping, and predictive modeling</p>
+                        </div>
+                        <div class="composition-item">
+                            <h4><i class="fas fa-bullhorn"></i> Communication Experts</h4>
+                            <p>Media professionals, speech writers, and digital content creators</p>
+                        </div>
+                        <div class="composition-item">
+                            <h4><i class="fas fa-map-marked-alt"></i> Field Coordinators</h4>
+                            <p>Ground operations experts with extensive network across states</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-process">
+                    <h3><i class="fas fa-cogs"></i> Our Working Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Assessment & Analysis</h4>
+                                <p>Comprehensive evaluation of political landscape, opponent strengths, and voter sentiment</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Strategy Development</h4>
+                                <p>Customized campaign blueprint with clear milestones and resource allocation</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Execution & Monitoring</h4>
+                                <p>Implementation with real-time tracking and adjustments based on ground feedback</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Result Optimization</h4>
+                                <p>Continuous optimization to maximize electoral gains and minimize resource wastage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose SAM -->
+    <section class="section why-choose-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="animate-on-scroll">Why Choose SAM?</h2>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card animate-on-scroll">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Confidentiality</h3>
+                    <p>Strict NDA protection for all client engagements. Your political strategies remain secure.</p>
+                </div>
+                
+                <div class="advantage-card animate-on-scroll delay-1">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data-Driven Approach</h3>
+                    <p>Evidence-based strategies backed by comprehensive data analysis and voter insights.</p>
+                </div>
+                
+                <div class="advantage-card animate-on-scroll delay-2">
+                    <div class="advantage-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Proven Track Record</h3>
+                    <p>Successful campaigns across Delhi MCD, Jharkhand, Bihar, and multiple other elections.</p>
+                </div>
+                
+                <div class="advantage-card animate-on-scroll delay-3">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>End-to-End Support</h3>
+                    <p>From initial planning to election day operations and post-election analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<style>
+/* Availability Bullet List */
+.availability-list {
+    margin-top: 12px;
+}
+
+.availability-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: rgba(10, 31, 68, 0.03);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--accent-red);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.availability-item:hover {
+    background: rgba(10, 31, 68, 0.07);
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(10, 31, 68, 0.1);
+}
+
+.availability-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    animation: pulseIcon 2s infinite;
+}
+
+.availability-icon i{
+color:white;font-size:14px;padding:0;margin:0;
+}
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(193, 39, 45, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 5px rgba(193, 39, 45, 0);
+    }
+}
+
+.availability-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.availability-detail .label {
+    font-size: 12px;
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.availability-detail .value {
+    font-size: 14px;
+    color: var(--dark-gray);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Animation Classes */
+.animate-availability {
+    animation: slideInRight 0.6s ease forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Form Validation Styles */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    transition: var(--transition);
+    background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(10, 31, 68, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.05);
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #2ecc71;
+    background-color: rgba(46, 204, 113, 0.05);
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.form-group.error .error-message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 25px;
+    background: rgba(46, 204, 113, 0.15);
+    border-left: 4px solid #2ecc71;
+    color: #2ecc71;
+    border-radius: var(--border-radius);
+    animation: fadeUp 0.6s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.success-message i {
+    font-size: 28px;
+    margin-top: 2px;
+}
+
+.success-message h4 {
+    color: #2ecc71;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.success-message p {
+    color: #27ae60;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Submit Button Loader */
+.submit-button {
+    width: 100%;
+    background-color: var(--accent-red);
+    color: var(--white);
+    padding: 18px;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button:hover {
+    background-color: #a02025;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(193, 39, 45, 0.3);
+}
+
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    display: none;
+    animation: spin 0.8s linear infinite;
+    position: absolute;
+}
+
+.submit-button.loading .btn-text {
+    opacity: 0;
+}
+
+.submit-button.loading .btn-loader {
+    display: block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Contact Social */
+.contact-social {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-social h4 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Form Select Styling */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1f44' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+/* Textarea Styling */
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .success-message {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .success-message i {
+        margin: 0 auto 10px;
+    }
+    
+    .submit-button {
+        padding: 16px;
+        font-size: 16px;
+    }
+}
+
+
+</style>
+
+
+
+<!-- Contact Section -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="animate-on-scroll">Contact Us</h2>
+            <p class="section-subtitle animate-on-scroll delay-1">Schedule a confidential consultation</p>
+        </div>
+        
+        <div class="contact-content animate-on-scroll">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone Consultation</h4>
+                        <p>+91 9341337864</p>
+        <div class="availability-list">
+            <div class="availability-item animate-availability">
+                <span class="availability-icon"><i class="fas fa-calendar-check"></i></span>
+                <span class="availability-detail">
+                    <span class="label">Available:</span>
+                    <span class="value">Monday to Saturday</span>
+                </span>
+            </div>
+            
+            <div class="availability-item animate-availability" style="animation-delay: 0.2s;">
+                <span class="availability-icon"><i class="fas fa-clock"></i></span>
+                <span class="availability-detail">
+                    <span class="label">Timing:</span>
+                    <span class="value">10:00 AM - 7:00 PM IST</span>
+                </span>
+            </div>
+        </div>
+
+
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sampoliticalconsultancy@gmail.com</p>
+                            <p class="contact-note">Response within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Office Location</h4>
+                            <p>Political Strategy Center</p>
+                            <p>New Friends Colony, New Delhi, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="confidentiality-notice">
+                        <i class="fas fa-user-secret"></i>
+                        <p>All consultations are protected by strict confidentiality agreements. Your political strategies remain secure with us.</p>
+                    </div>
+                </div>
+            
+            <!-- Updated Form -->
+            <div class="contact-form">
+                <h3>Request Confidential Consultation</h3>
+                <form id="consultationForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" placeholder="Full Name" required>
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" placeholder="Email Address" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" name="phone" id="phone" placeholder="Mobile Number (10 digits)" required>
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="consultation_type" id="consultation_type" required>
+                            <option value="">Select Consultation Type</option>
+                            <option value="Election Planning & Strategy">Election Planning & Strategy</option>
+                            <option value="Campaign Management">Campaign Management</option>
+                            <option value="Media & Narrative Building">Media & Narrative Building</option>
+                            <option value="Voter Survey & Data Analytics">Voter Survey & Data Analytics</option>
+                            <option value="General Political Advisory">General Political Advisory</option>
+                            <option value="Other Requirements">Other Requirements</option>
+                        </select>
+                        <div class="error-message" id="typeError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" id="message" placeholder="Briefly describe your political campaign requirements (optional)" rows="4"></textarea>
+                    </div>
+                    
+                    <!-- Hidden fields for EmailJS -->
+                    <input type="hidden" name="user_name" id="user_name">
+                    <input type="hidden" name="user_email" id="user_email">
+                    <input type="hidden" name="user_phone" id="user_phone">
+                    <input type="hidden" name="user_consultation" id="user_consultation">
+                    <input type="hidden" name="user_message" id="user_message">
+                    
+                    <button type="submit" class="submit-button">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Submit Consultation Request</span>
+                        <span class="btn-loader"></span>
+                    </button>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Thank you for your request!</h4>
+                        <p>Our team will contact you within 24 hours. We've also sent the details to your WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>SAM</h3>
+                    <p>Strategic Advisory & Management</p>
+                    <p>Political Strategy & Consulting</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#founder">Founder</a></li>
+                        <li><a href="#elections">Elections</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Political Strategy</li>
+                        <li>Digital Campaigns</li>
+                        <li>Data Analytics</li>
+                        <li>Ground Operations</li>
+                        <li>Media Management</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +91 9341337864</p>
+                    <p><i class="fas fa-envelope"></i> sampoliticalconsultancy@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+
+                   <div class="footer-social">
+                        <h4>Follow Our Insights</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/ahmadsamjam?igsh=Nng2eWt2bHllNmJx"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Strategic Advisory & Management. All Rights Reserved.</p>
+                <p class="disclaimer">Confidential political consultancy services. All client information protected under NDA.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+<!-- Bootstrap Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content border-0 shadow-lg">
+      <!-- Modal Header -->
+      <div class="modal-header bg-primary-blue text-white">
+        <div class="w-100 text-center position-relative">
+          <h5 class="modal-title fw-bold fs-4" id="contactModalLabel">
+            <i class="fas fa-headset me-2"></i>
+            Strategic Consultation
+          </h5>
+          
+          <button type="button" class="btn-close btn-close-white position-absolute" 
+                  style=" top: 10px;" 
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body p-3 pb-2">
+        <div class="text-center mb-0">
+         
+        </div>
+
+        <!-- Contact Form -->
+        <div class="border rounded p-3 pb-1 mb-3 bg-light">
+          <!-- Phone Input -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-primary-blue">
+              <i class="fas fa-phone me-2"></i>Enter Your 10-digit Mobile Number
+            </label>
+            <div class="input-group">
+              <span class="input-group-text bg-primary-blue text-white border-0">+91</span>
+              <input type="tel" 
+                     class="form-control border-start-0" 
+                     id="modalPhone" 
+                     placeholder="93413 37864"
+                     maxlength="11"
+                     pattern="[6-9][0-9]{4} [0-9]{5}"
+                     oninput="formatModalPhone(this)">
+              <button class="btn btn-outline-primary" type="button" onclick="pasteNumber()">
+                <i class="fas fa-paste"></i>
+              </button>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+              <div class="text-danger small" id="modalPhoneError" style="display: none;align-items:center">
+                <i class="fas fa-exclamation-circle me-1"></i>
+                Please enter valid 10-digit number
+              </div>
+              <div class="text-success  small  text-start " id="modalPhoneSuccess" style="display: none;align-items:center">
+                <i class="fas fa-check-circle me-1 "></i>
+                Valid number ✓
+              </div>
+            </div>
+          </div>
+
+ <!-- WhatsApp Button -->
+<button type="button" 
+        class="btn btn-success w-100 py-3 fw-bold mb-3" 
+        id="modalWhatsappBtn">
+    <i class="fab fa-whatsapp fa-lg me-2"></i>
+    Contact on WhatsApp
+</button>
+
+          <!-- Alternative Options -->
+          <div class="text-center position-relative mb-3">
+            <hr class="my-4">
+            <span class="bg-white px-3  position-absolute top-50 start-50 translate-middle text-muted small">
+              OR Contact Directly
+            </span>
+          </div>
+
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <a href="tel:+919341337864" class="btn btn-danger w-100 py-2">
+                <i class="fas fa-phone me-1"></i>
+                Call Now
+              </a>
+            </div>
+            <div class="col-6">
+              <a href="mailto:sampoliticalconsultancy@gmail.com?subject=Political Consultation Request" 
+                 class="btn btn-primary-blue w-100 py-2">
+                <i class="fas fa-envelope me-1"></i>
+                Send Email
+              </a>
+            </div>
+          </div>
+</div>
+        <!-- Availability -->
+        <div class="text-center">
+          <p class="text-muted small mb-0">
+            <i class="fas fa-clock me-1"></i>
+            Available: Mon-Sat, 10AM-7PM IST
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Floating Contact Button -->
+<button class="btn btn-danger rounded-circle shadow-lg" 
+        style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; z-index: 999;"
+        onclick="showModal()">
+  <i class="fas fa-headset fa-lg"></i>
+</button>
+
+
+
+
+
+<style>
+/* Modal Custom Styles */
+.bg-primary-blue {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a3a72 100%) !important;
+}
+
+ 
+
+
+.btn-primary-blue {
+  background-color: var(--primary-blue) !important;
+  border-color: var(--primary-blue) !important;
+  color: var(--white) !important;
+}
+
+.btn-primary-blue:hover {
+  background-color: #0c2a5a !important;
+  border-color: #0c2a5a !important;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  border: none !important;
+  transition: var(--transition) !important;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3) !important;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--accent-red) 0%, #a02025 100%) !important;
+  border: none !important;
+  transition: var(--transition) !important;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(193, 39, 45, 0.3) !important;
+}
+
+/* Modal Header Pattern */
+.modal-header {
+  position: relative;
+  overflow: hidden;
+}
+
+#contactModal > div > div > div.modal-header.bg-primary-blue.text-white > div > button{
+right:10px;
+}
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Modal Animation */
+.modal-content {
+  animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Small modal on mobile */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 10px;
+  }
+  
+  .modal-body {
+    padding: 1rem !important;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem !important;
+  }
+#contactModal > div > div > div.modal-body.p-3.pb-2 > div.border.rounded.p-3.mb-3.bg-light > div.row.g-2.mb-3 > div > a{
+    padding: 0.5rem 0rem !important;
+}
+
+#contactModal > div > div > div.modal-body.p-3.pb-2 > div.border.rounded.p-3.pb-1.mb-3.bg-light > div.text-center.position-relative.mb-3 > span{
+width:66%;
+}
+
+#contactModal > div > div > div.modal-header.bg-primary-blue.text-white > div > button{
+right:-5px;
+}
+}
+
+</style>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>   
+
+
+
+
+
+
+    // Notification function
+    function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                <span>${message}</span>
+            </div>
+            <button class="notification-close"><i class="fas fa-times"></i></button>
+        `;
+        
+        // Add styles for notification
+        const style = document.createElement('style');
+        style.textContent = `
+            .notification {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 4px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-width: 300px;
+                max-width: 400px;
+                z-index: 9999;
+                animation: slideIn 0.3s ease;
+            }
+            .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .notification-close {
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                padding: 0;
+                margin-left: 15px;
+                transition: all 0.3s ease;
+            }
+            .notification-close:hover {
+                transform: rotate(90deg);
+            }
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add close functionality
+        notification.querySelector('.notification-close').addEventListener('click', () => {
+            notification.style.animation = 'slideIn 0.3s ease reverse';
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 300);
+        });
+        
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => {
+                    notification.remove();
+                    style.remove();
+                }, 300);
+            }
+        }, 5000);
+    }
+
+
+
+// script.js - Complete with Animations & Sliders
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Loading Animation
+    setTimeout(() => {
+        document.body.style.overflow = 'auto';
+    }, 2500);
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const overlay = document.getElementById('overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Close mobile menu when clicking on a link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu if open
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Calculate scroll position
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                // Smooth scroll
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form submission
+    const consultationForm = document.getElementById('consultationForm');
+    if (consultationForm) {
+        consultationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = this.querySelector('input[type="text"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Simple validation
+            if (!name || !phone || !email) {
+                showNotification('Please fill all required fields', 'error');
+                return;
+            }
+            
+        
+            
+      
+        });
+    }
+
+/* notification functionFounder & Chief Strategist   */
+
+
+
+    // Scroll animations
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const animateOnScroll = () => {
+        animateElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    };
+
+    // Check on page load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+            header.style.background = 'var(--white)';
+            header.style.backdropFilter = 'none';
+        }
+    });
+
+    // Initialize Swiper Sliders
+    // Hero Slider
+    const heroSwiper = new Swiper('.hero-slider', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    // Election Timeline Slider
+    const electionSwiper = new Swiper('.electionSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    // Success Stories Slider
+    const storiesSwiper = new Swiper('.storiesSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    // Team Slider
+    const teamSwiper = new Swiper('.teamSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    // Add hover effect to cards
+    const cards = document.querySelectorAll('.service-card, .advantage-card, .election-slide-card, .story-card, .team-member-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Add typing effect to hero text
+    const heroText = document.querySelector('.hero h1');
+    if (heroText) {
+        const text = heroText.textContent;
+        heroText.textContent = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                heroText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        
+        // Start typing after page load
+        setTimeout(typeWriter, 1000);
+    }
+
+    // Add count-up animation to stats
+    const stats = document.querySelectorAll('.stat-number');
+    stats.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        let current = 0;
+        const increment = target / 50;
+        
+        const updateStat = () => {
+            if (current < target) {
+                current += increment;
+                stat.textContent = Math.round(current) + (stat.textContent.includes('%') ? '%' : '+');
+                setTimeout(updateStat, 30);
+            } else {
+                stat.textContent = target + (stat.textContent.includes('%') ? '%' : '+');
+            }
+        };
+        
+        // Start animation when stat is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateStat();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(stat);
+    });
+
+    // Add parallax effect to hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        }
+    });
+
+    // Add active class to current section in navigation
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+
+    const highlightNavLink = () => {
+        let scrollPos = window.scrollY + 120;
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                current = sectionId;
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', highlightNavLink);
+    window.addEventListener('load', highlightNavLink);
+
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.cta-button, .planning-button, .submit-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+    // Add ripple effect styles
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        .cta-button, .planning-button, .submit-button {
+            position: relative;
+            overflow: hidden;
+        }
+    `;
+    document.head.appendChild(rippleStyle);
+
+    // Add floating elements animation
+    function createFloatingElement() {
+        const floating = document.createElement('div');
+        floating.className = 'floating-element';
+        floating.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        `;
+        
+        // Random position
+        floating.style.left = Math.random() * 100 + 'vw';
+        floating.style.top = Math.random() * 100 + 'vh';
+        
+        // Random animation
+        const duration = 20 + Math.random() * 20;
+        floating.style.animation = `float ${duration}s linear infinite`;
+        
+        document.body.appendChild(floating);
+        
+        // Remove after animation
+        setTimeout(() => {
+            floating.remove();
+        }, duration * 1000);
+    }
+
+    // Create floating elements
+    for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+            createFloatingElement();
+        }, i * 1000);
+    }
+
+    // Add floating animation
+    const floatStyle = document.createElement('style');
+    floatStyle.textContent = `
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, -20px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-10px, 20px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, -10px) rotate(270deg);
+            }
+        }
+    `;
+    document.head.appendChild(floatStyle);
+
+    // Initialize everything
+    console.log('SAM Political Consulting Website Loaded Successfully');
+    console.log('All animations and sliders initialized');
+});
+
+
+
+
+
+
+
+
+
+// Tab Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.education-card, .experience-item, .interview-card, .philosophy-point');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Animation on scroll
+            const animateElements = document.querySelectorAll('.education-card, .experience-item, .interview-card, .philosophy-point');
+            
+            const animateOnScroll = () => {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Animate on load and scroll
+            window.addEventListener('load', animateOnScroll);
+            window.addEventListener('scroll', animateOnScroll);
+            
+            console.log('Founder & Leadership Section Loaded Successfully');
+        });
+
+
+
+// Add animation for availability items on scroll
+const availabilityItems = document.querySelectorAll('.availability-item');
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-availability');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+availabilityItems.forEach(item => {
+    observer.observe(item);
+});
+
+
+
+
+
+
+
+
+
+
+
+// Enhanced Form Validation and Submission
+(function() {
+    const form = document.getElementById('consultationForm');
+    if (!form) return;
+    
+    const button = form.querySelector('.submit-button');
+    const successBox = document.getElementById('successMessage');
+    const btnText = button.querySelector('.btn-text');
+    document.getElementById('successMessage').style.display='none';
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("-X5gOOFEgflfsYcM3");
+    })();
+    
+    // Validation functions
+    function validateName() {
+        const name = form.name.value.trim();
+        const error = document.getElementById('nameError');
+        const group = form.name.closest('.form-group');
+        
+        if (name === '') {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Full name is required';
+            return false;
+        } else if (name.length < 2) {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Name must be at least 2 characters';
+            return false;
+        } else {
+            group.classList.remove('error');
+            group.classList.add('success');
+            error.textContent = '';
+            return true;
+        }
+    }
+    
+    function validateEmail() {
+        const email = form.email.value.trim();
+        const error = document.getElementById('emailError');
+        const group = form.email.closest('.form-group');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (email === '') {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Email address is required';
+            return false;
+        } else if (!emailRegex.test(email)) {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Please enter a valid email address';
+            return false;
+        } else {
+            group.classList.remove('error');
+            group.classList.add('success');
+            error.textContent = '';
+            return true;
+        }
+    }
+    
+    function validatePhone() {
+        const phone = form.phone.value.trim();
+        const error = document.getElementById('phoneError');
+        const group = form.phone.closest('.form-group');
+        const phoneRegex = /^[6-9]\d{9}$/;
+        
+        if (phone === '') {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Phone number is required';
+            return false;
+        } else if (!phoneRegex.test(phone)) {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Please enter a valid 10-digit Indian phone number';
+            return false;
+        } else {
+            group.classList.remove('error');
+            group.classList.add('success');
+            error.textContent = '';
+            return true;
+        }
+    }
+    
+    function validateType() {
+        const type = form.consultation_type.value;
+        const error = document.getElementById('typeError');
+        const group = form.consultation_type.closest('.form-group');
+        
+        if (type === '') {
+            group.classList.remove('success');
+            group.classList.add('error');
+            error.textContent = 'Please select a consultation type';
+            return false;
+        } else {
+            group.classList.remove('error');
+            group.classList.add('success');
+            error.textContent = '';
+            return true;
+        }
+    }
+    
+    // Real-time validation
+    form.name.addEventListener('blur', validateName);
+    form.email.addEventListener('blur', validateEmail);
+    form.phone.addEventListener('blur', validatePhone);
+    form.consultation_type.addEventListener('change', validateType);
+    
+    // Clear errors on input
+    form.name.addEventListener('input', function() {
+        const group = this.closest('.form-group');
+        if (group.classList.contains('error')) {
+            group.classList.remove('error');
+            document.getElementById('nameError').textContent = '';
+        }
+    });
+    
+    form.email.addEventListener('input', function() {
+        const group = this.closest('.form-group');
+        if (group.classList.contains('error')) {
+            group.classList.remove('error');
+            document.getElementById('emailError').textContent = '';
+        }
+    });
+    
+    form.phone.addEventListener('input', function() {
+        const group = this.closest('.form-group');
+        if (group.classList.contains('error')) {
+            group.classList.remove('error');
+            document.getElementById('phoneError').textContent = '';
+        }
+    });
+    
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Run all validations
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhone();
+        const isTypeValid = validateType();
+        
+        if (!isNameValid || !isEmailValid || !isPhoneValid || !isTypeValid) {
+            // Scroll to first error
+            const firstError = form.querySelector('.error');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+        
+        const email = form.email.value.trim().toLowerCase();
+        
+        // Check for duplicate submission
+        if (localStorage.getItem("sam_consult_" + email)) {
+            alert("This email has already submitted a consultation request. Please use a different email or contact us directly.");
+            return;
+        }
+        
+        // Show loading state
+        button.classList.add('loading');
+        
+        // Get form data
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            consultation_type: form.consultation_type.options[form.consultation_type.selectedIndex].text,
+            consultation_value: form.consultation_type.value,
+            message: form.message.value || 'No additional message'
+        };
+        
+        // Set hidden fields for EmailJS
+        document.getElementById('user_name').value = formData.name;
+        document.getElementById('user_email').value = formData.email;
+        document.getElementById('user_phone').value = formData.phone;
+        document.getElementById('user_consultation').value = `${formData.consultation_type} (${formData.consultation_value})`;
+        document.getElementById('user_message').value = formData.message;
+        
+        // Send via EmailJS
+        emailjs.sendForm(
+            "service_zcz3sie",
+            "template_cbta07t",
+            form
+        ).then(() => {
+            // Mark as submitted
+            localStorage.setItem("sam_consult_" + email, "done");
+            
+            // Prepare WhatsApp message
+            const msg = `📋 *New Consultation Request - SAM Political Consulting*%0A%0A
+👤 *Name:* ${formData.name}%0A
+📧 *Email:* ${formData.email}%0A
+📱 *Phone:* ${formData.phone}%0A
+🎯 *Consultation Type:* ${formData.consultation_type}%0A
+💬 *Message:* ${formData.message}%0A%0A
+🕒 *Received:* ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
+            
+                 // Show success message
+            showNotification(`Thank you ${formData.name}! Your consultation request has been received. We will contact you within 24 hours at ${formData.phone}.`, 'success'); 
+            // Open WhatsApp
+            window.open(`https://wa.me/919341337864?text=${msg}`, '_blank');
+            
+            // Show success message
+            button.classList.remove('loading');
+            form.style.display = 'none';
+            successBox.style.display = 'flex';
+            
+            // Reset form after delay
+            setTimeout(() => {
+                form.reset();
+                // Remove success classes
+                form.querySelectorAll('.form-group').forEach(group => {
+                    group.classList.remove('success');
+                });
+                form.style.display = 'block';
+                successBox.style.display = 'none';
+            }, 8000);
+            
+        }).catch(err => {
+            button.classList.remove('loading');
+            alert("Submission failed. Please try again or contact us directly at +91 9341337864");
+            console.error('EmailJS Error:', err);
+        });
+    });
+})();
+
+
+
+
+
+
+
+
+// ==============================
+// MODAL FUNCTIONS - UPDATED
+// ==============================
+
+const WHATSAPP_NUMBER = "919341337864";
+
+// Phone number formatting
+function formatModalPhone(input) {
+    let value = input.value.replace(/\D/g, '');
+    
+    // Add space after 5 digits
+    if (value.length > 5) {
+        value = value.slice(0, 5) + ' ' + value.slice(5, 10);
+    }
+    
+    input.value = value;
+    validateModalPhone();
+}
+
+// Validate phone number in real-time
+function validateModalPhone() {
+    const phoneInput = document.getElementById('modalPhone');
+    const phoneError = document.getElementById('modalPhoneError');
+    const phoneSuccess = document.getElementById('modalPhoneSuccess');
+    const whatsappBtn = document.getElementById('modalWhatsappBtn');
+    
+    // Get phone number without spaces
+    const phone = phoneInput.value.replace(/\s/g, '');
+    const phoneRegex = /^[6-9]\d{9}$/; // 10-digit Indian number
+    
+    if (phone === '') {
+        phoneError.style.display = 'none';
+        phoneSuccess.style.display = 'none';
+        whatsappBtn.classList.add('disabled');
+        return false;
+    }
+    
+    if (phoneRegex.test(phone)) {
+        phoneError.style.display = 'none';
+        phoneSuccess.style.display = 'flex';
+        whatsappBtn.classList.remove('disabled');
+        
+        // Create WhatsApp URL with message
+        const message = `Hello SAM Team, I need political consultation. My number is ${phone}. Please contact me.`;
+        whatsappBtn.setAttribute('data-whatsapp-url', `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`);
+        return true;
+    } else {
+        phoneError.style.display = 'flex';
+        phoneSuccess.style.display = 'none';
+        whatsappBtn.classList.add('disabled');
+        whatsappBtn.removeAttribute('data-whatsapp-url');
+        return false;
+    }
+}
+
+// Open WhatsApp with validation - SIMPLIFIED VERSION
+function openModalWhatsApp(e) {
+    e.preventDefault();
+    
+    if (!validateModalPhone()) {
+        // Show error animation
+        const phoneInput = document.getElementById('modalPhone');
+        phoneInput.classList.add('is-invalid');
+        phoneInput.focus();
+        
+        setTimeout(() => {
+            phoneInput.classList.remove('is-invalid');
+        }, 1500);
+        
+        return false;
+    }
+    
+    // Get WhatsApp URL from data attribute
+    const whatsappBtn = document.getElementById('modalWhatsappBtn');
+    const whatsappUrl = whatsappBtn.getAttribute('data-whatsapp-url');
+    
+    if (whatsappUrl) {
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Close modal after opening WhatsApp
+        setTimeout(() => {
+            const modalElement = document.getElementById('contactModal');
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            if (modal) {
+                modal.hide();
+            }
+        }, 500);
+        
+        return true;
+    }
+    
+    return false;
+}
+
+// Paste number from clipboard
+function pasteNumber() {
+    if (navigator.clipboard) {
+        navigator.clipboard.readText()
+            .then(text => {
+                // Clean the text - remove non-digits
+                const cleaned = text.replace(/\D/g, '');
+                if (cleaned.length >= 10) {
+                    const phone = cleaned.slice(-10); // Take last 10 digits
+                    document.getElementById('modalPhone').value = 
+                        phone.slice(0, 5) + ' ' + phone.slice(5, 10);
+                    validateModalPhone();
+                    
+                    // Show success toast
+                    showToast('Phone number pasted successfully!', 'success');
+                } else {
+                    showToast('No valid phone number found in clipboard', 'error');
+                }
+            })
+            .catch(err => {
+                console.error('Failed to paste:', err);
+                showToast('Unable to paste from clipboard', 'error');
+            });
+    } else {
+        showToast('Clipboard API not supported', 'error');
+    }
+}
+
+// Show toast notification
+function showToast(message, type) {
+    // Remove existing toasts
+    const existingToasts = document.querySelectorAll('.toast');
+    existingToasts.forEach(toast => toast.remove());
+    
+    const toastHtml = `
+        <div class="toast align-items-center text-bg-${type === 'success' ? 'success' : 'danger'} border-0" 
+             role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} me-2"></i>
+                    ${message}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    `;
+    
+    const container = document.getElementById('toastContainer') || createToastContainer();
+    container.innerHTML = toastHtml;
+    
+    const toastElement = container.querySelector('.toast');
+    const toast = new bootstrap.Toast(toastElement, {
+        autohide: true,
+        delay: 3000
+    });
+    toast.show();
+}
+
+function createToastContainer() {
+    const container = document.createElement('div');
+    container.id = 'toastContainer';
+    container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+    container.style.zIndex = '9999';
+    document.body.appendChild(container);
+    return container;
+}
+
+// Function to show modal (call this from any button)
+function showModal() {
+    const modalElement = document.getElementById('contactModal');
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+    
+    // Reset form when modal opens
+    document.getElementById('modalPhone').value = '';
+    document.getElementById('modalPhoneError').style.display = 'none';
+    document.getElementById('modalPhoneSuccess').style.display = 'none';
+    document.getElementById('modalWhatsappBtn').classList.add('disabled');
+}
+
+// Initialize modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get WhatsApp button and add event listener
+    const whatsappBtn = document.getElementById('modalWhatsappBtn');
+    if (whatsappBtn) {
+        // Remove existing onclick attribute
+        whatsappBtn.removeAttribute('onclick');
+        
+        // Add new event listener
+        whatsappBtn.addEventListener('click', function(e) {
+            openModalWhatsApp(e);
+        });
+    }
+    
+    // Add event listeners for phone input
+    const phoneInput = document.getElementById('modalPhone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function() {
+            formatModalPhone(this);
+        });
+        
+        phoneInput.addEventListener('blur', function() {
+            validateModalPhone();
+        });
+    }
+    
+    // Auto-show modal after 5 seconds (optional)
+    setTimeout(() => {
+        // Uncomment below line to auto-show modal
+        // showModal();
+    }, 5000);
+});
+
+// Add click event to your existing "Schedule Consultation" buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event to existing CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-button, .planning-button');
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#contact') {
+                e.preventDefault();
+                showModal();
+            }
+        });
+    });
+                showModal();
+});
+
+
+
+
+</script>
+</body>
+</html>
